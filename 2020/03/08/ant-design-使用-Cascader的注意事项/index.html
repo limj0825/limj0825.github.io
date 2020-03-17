@@ -298,21 +298,27 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "Sun Mar 08 2020 00:17:51 GMT+0800",
-  owner: 'limj0825',
-  repo: 'limj0825.github.io',
-  oauth: {
-    client_id: '8aaddddfc8290311ef3b',
-    client_secret: '1d511dc5ca46dee9591868b50ce1889cb51d5dbd',
-  },
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '8aaddddfc8290311ef3b',
+  	clientSecret: '1d511dc5ca46dee9591868b50ce1889cb51d5dbd',
+  	repo: 'limj0825.github.io',
+  	owner: 'limj0825',
+  	admin: ['limj0825'],
+  	id: 'Sun Mar 08 2020 00:17:51 GMT+0800',
+  	distractionFreeMode: 'true'
 })
-gitment.render('gitment-ctn')
+gitalk.render('gitalk-container') 
+}
 </script>
+
   
 
 
