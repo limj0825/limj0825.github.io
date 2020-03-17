@@ -164,7 +164,7 @@
       
         <ul>
 <li>每个数据中拥有默认的 <strong>isLeaf</strong> 属性，如果这个数据拥有子数据，记得将其设置为 <strong>false</strong> ，由此出发 <strong>loadData</strong> 函数。</li>
-<li>如果一个数据的 <strong>isLeaf</strong> 为 <strong>false</strong>，那他的 <strong>children</strong> 一定不能为空，否则不会触发 <strong>loadData</strong> 函数。</li>
+<li>如果一个数据的 <strong>isLeaf</strong> 为 <strong>false</strong>，可以不设置 <strong>children</strong> ，等后面更新的时候再设置，但一定不能设置为空，比如<code>children: []</code>，否则不会触发 <strong>loadData</strong> 函数。</li>
 </ul>
 
       
