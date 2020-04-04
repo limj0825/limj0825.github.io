@@ -16,7 +16,7 @@
 <meta property="og:description" content="一个经典的寻找数组中不同元素的问题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-03T11:18:22.000Z">
-<meta property="article:modified_time" content="2020-04-04T07:12:01.811Z">
+<meta property="article:modified_time" content="2020-04-04T07:12:16.643Z">
 <meta property="article:author" content="Mr.Lee">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,7 @@
 <li><p>给出一个数组，里面有三个数出现了一次，其余出现了两次，找出这三个数。</p>
 <p>​    $x = a \otimes b\otimes c$ 。</p>
 <p>​    如果 $x$ 为 $0$ ，那么去找一个位 $m$ ，使得所有的数与 $2^m$ 做 $and$ 操作后分成两个数组，如果两个数组异或起来均不为 $0$ ，那么奇数个元素的数组异或起来的值就是所求的第一个数，另外一个数组可以转化为第二个问题。</p>
-<p>​     如果 $x$ 不为 $0$ ，记 $f(x) =x\  and\ -x$ ，即求得 $x$ 最小的那一位 $1$ ，记这个为是 $m$ ，记 $A=f(x\otimes a)\ \ B=f(x\otimes b)\ \ C=f(x\otimes c)$ ，那么 $A\otimes B\otimes C$ 一定不为 $0$ ， 因为对于任意的 $x$ 和 $y$ ， $f(x) \otimes f(y)$ 肯定为 $0$ 或者两个 $1$ 。又因为三个不全为 $1$ 也不全为 $0$ 的数相互异或一定有两个 $1$ 和一个 $0$ ，所以 $a\ \ b\ \ c$ 在 $m$ 位一定是两个 $1$ 和一个 $0$ ，或者两个 $0$ 和一个 $1$ ，那么只要根据第  $m$ 位将数组划分为两组，奇数组异或起来就是所求的第一个数，偶数组可以转化为第二个问题。</p>
+<p>​     如果 $x$ 不为 $0$ ，记 $f(x) =x\  and\ -x$ ，即求得 $x$ 最小的那一位 $1$ ，记这个位是 $m$ ，记 $A=f(x\otimes a)\ \ B=f(x\otimes b)\ \ C=f(x\otimes c)$ ，那么 $A\otimes B\otimes C$ 一定不为 $0$ ， 因为对于任意的 $x$ 和 $y$ ， $f(x) \otimes f(y)$ 肯定为 $0$ 或者两个 $1$ 。又因为三个不全为 $1$ 也不全为 $0$ 的数相互异或一定有两个 $1$ 和一个 $0$ ，所以 $a\ \ b\ \ c$ 在 $m$ 位一定是两个 $1$ 和一个 $0$ ，或者两个 $0$ 和一个 $1$ ，那么只要根据第  $m$ 位将数组划分为两组，奇数组异或起来就是所求的第一个数，偶数组可以转化为第二个问题。</p>
 </li>
 </ul>
 
