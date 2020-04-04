@@ -16,7 +16,7 @@
 <meta property="og:description" content="一个经典的寻找数组中不同元素的问题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-03T11:18:22.000Z">
-<meta property="article:modified_time" content="2020-04-03T17:21:25.890Z">
+<meta property="article:modified_time" content="2020-04-04T06:33:38.812Z">
 <meta property="article:author" content="Mr.Lee">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
@@ -181,10 +181,9 @@
 </ul>
 <ul>
 <li><p>给出一个数组，里面有三个数出现了一次，其余出现了两次，找出这三个数。</p>
-<p>​    定义 $f(x) =x\ and\ -x$ ，也就是求出 $x$ 最低的那位 $1$。</p>
-<p>​    $x = a \otimes b\otimes c$ ，那么$f(x\otimes a)\otimes f(x\otimes b)\otimes f(x\otimes c)$ 一定不为 $0$，因为 $a\ b\ c$ 互不相同，所以 $a\otimes b\ \ \ b\otimes c\ \ \ c\otimes a$ 均不为0，所以$f(x\otimes a)\otimes f(x\otimes b)\otimes f(x\otimes c)$ 一定是三个位上的 $1$ 做异或。</p>
-<p>​    我们假设 $f(x\otimes a)\otimes f(x\otimes b)\otimes f(x\otimes c)$ 的第 $m$ 位为 $1$ ，则 $x\otimes a\ \ \ x\otimes b\ \ \ x\otimes c$ 必有 $1$ 个或者 $3$ 个第 $m$ 位为 $1$ ，又因为，如果三个的第 $m$ 位都为 $1$ 的话，不考虑除了 $m$ 以外的位，那么 $b\otimes c ==c\otimes a==a\otimes b==2^m$ ，把前面三项同时异或起来得到 $b\otimes c\otimes c \otimes a\otimes a \otimes b ==2^m \otimes2^m\otimes2^m$ 很明显等式左边为 $0$ ，右边为 $2^m$ ，不成立，所以只有一个的第 $m$ 位是 $1$ 。</p>
-<p>​    那么我们用第 $m$ 位与所有数做 $and$ 运算，为 $0$ 的放在第一个数组，不为 $0 $ 的放在第二个数组，则第 $m$ 位为 $1$ 的那个数一定在第二个数组，另外两个数在第一个数组，所以第二个数组所有数异或起来异或即是所求的第一个数，同理，在数组中额外加入一个这个数，那么问题就变成了第二个问题。</p>
+<p>​    $x = a \otimes b\otimes c$ 。</p>
+<p>​    如果 $x$ 为 $0$ ，那么去找一个位 $m$ ，使得所有的数与 $2^m$ 做 $and$ 操作后分成两个数组，如果两个数组异或起来均不为 $0$ ，那么奇数个元素的数组异或起来的值就是所求的第一个数，另外一个数组可以转化为第二个问题。</p>
+<p>​    如果 $x$ 不为 $0$ ，那么随便找一位在 $x$ 中找一位 $1$ ，那么 $a\ \ b\ \ c$ 的这一位肯定是其中两个或一个为 $1$ ，否则 $x$ 的这一位不可能是 $1$ ，然后让所有数与 $2^m$ 做异或分成两个数组，奇数数组异或起来的值就是所求的第一个数，另外一个数组可以转化为第二个问题。</p>
 </li>
 </ul>
 
